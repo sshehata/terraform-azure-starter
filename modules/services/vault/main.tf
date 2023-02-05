@@ -1,12 +1,12 @@
 # The central key vault
 
 locals {
-  name = "ssmainvault"
+  name = "ssglobalvault"
 }
 
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_key_vault" "vault" {
+resource "azurerm_key_vault" "global_vault" {
   name                        = local.name
   location                    = var.resource_group_location
   resource_group_name         = var.resource_group_name
@@ -51,5 +51,4 @@ resource "azurerm_key_vault" "vault" {
   tags = {
     managedBy = "terraform"
   }
-
 }

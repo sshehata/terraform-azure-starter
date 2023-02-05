@@ -16,20 +16,20 @@ provider "azurerm" {
 EOF
 }
 
-#remote_state {
-#  backend = "azurerm"
-#  generate = {
-#    path      = "backend.tf"
-#    if_exists = "overwrite_terragrunt"
-#  }
-#  
-#  config = {
-#        key = "${path_relative_to_include()}/terraform.tfstate"
-#        resource_group_name = "infrastructure"
-#        storage_account_name = "sstfbackend"
-#        container_name = "sstfbackend"
-#    }
-#}
+remote_state {
+  backend = "azurerm"
+  generate = {
+    path      = "backend.tf"
+    if_exists = "overwrite_terragrunt"
+  }
+  
+  config = {
+        key = "${path_relative_to_include()}/terraform.tfstate"
+        resource_group_name = "infrastructure"
+        storage_account_name = "sstfbackend"
+        container_name = "sstfbackend"
+    }
+}
 
 generate "versions" {
   path      = "versions.tf"
