@@ -22,7 +22,7 @@ remote_state {
     path      = "backend.tf"
     if_exists = "overwrite_terragrunt"
   }
-  
+
   config = {
         key = "${path_relative_to_include()}/terraform.tfstate"
         resource_group_name = "infrastructure"
