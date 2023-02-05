@@ -18,6 +18,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Format
+        working-directory: ./global
         id: fmt
         run: terraform fmt -check
 
