@@ -6,7 +6,7 @@ on:
       - 'main'
   pull_request:
 jobs:
-  apply-terragrunt:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
